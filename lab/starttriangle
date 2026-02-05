@@ -1,28 +1,28 @@
-package practice2;
+package Week2;
 
-import java.util.Scanner;
+public class StarTriangle {
+	
+	private int count;
+	
+	public StarTriangle(int cnt) {
+		this.count = cnt;
+	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for(int i = 1; i <= count; i++) {
+			for(int j = 1; j <= i; j++) {
+			    sb.append("[*]");
+			}
+			if(i < count) sb.append("\n");
+		}
+		return sb.toString();
+	}
+	
+	public static void main(String[] args) {
+		StarTriangle small = new StarTriangle(3);
+		System.out.println(small.toString());
+	}
 
-
-public class SetTriangle {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int lenght = Integer.parseInt(scanner.next());
-        StarTriangle starTriangle = new StarTriangle(lenght);
-        System.out.println(starTriangle.toString());
-    }
 }
-class StarTriangle{
-    private int length;
-    private String pattern = "[*]";
-    private String result="";
-    public StarTriangle(int length){
-        this.length = length;
-    }
-    public String toString(){
-        for(int i=1; i<=length; i++){
-            result += pattern.repeat(i)+'\n';
-        }
-        return result;
-    }
 
-}
